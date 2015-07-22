@@ -1,0 +1,145 @@
+		<?php
+		//jqGrid
+		echo Phalcon\Tag::javascriptInclude("js/jqGrid/grid.locale-ru.js");
+		echo Phalcon\Tag::javascriptInclude("js/jqGrid/jquery.jqGrid.min.js");
+
+		// IMPORTANT: APP CONFIG */
+		echo Phalcon\Tag::javascriptInclude("js/app.config.js");
+        ?>
+		<script>
+			$.sound_path = 'sound/';
+		</script>
+
+		<?php
+        // OUR WRAPPERS
+		echo Phalcon\Tag::javascriptInclude("js/notifications.js");
+		echo Phalcon\Tag::javascriptInclude("js/ajaxErrorHandler.js");
+		echo Phalcon\Tag::javascriptInclude("js/xHttp.js");
+
+		//JS TOUCH : include this plugin for mobile drag / drop touch events
+		echo Phalcon\Tag::javascriptInclude("js/plugin/jquery-touch/jquery.ui.touch-punch.min.js");
+
+		//BOOTSTRAP JS
+		echo Phalcon\Tag::javascriptInclude("js/bootstrap.min.js");
+
+		//CUSTOM NOTIFICATION
+		echo Phalcon\Tag::javascriptInclude("js/SmartNotification.min.js");
+
+		//JARVIS WIDGETS
+		echo Phalcon\Tag::javascriptInclude("js/jarvis.widget.min.js");
+
+		//EASY PIE CHARTS
+		echo Phalcon\Tag::javascriptInclude("js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js");
+
+		//SPARKLINES
+		echo Phalcon\Tag::javascriptInclude('js/plugin/sparkline/jquery.sparkline.min.js');
+
+		//JQUERY VALIDATE
+		echo Phalcon\Tag::javascriptInclude('js/plugin/jquery-validate/jquery.validate.min.js');
+
+		//JQUERY MASKED INPUT
+		echo Phalcon\Tag::javascriptInclude('js/plugin/masked-input/jquery.maskedinput.min.js');
+
+		//JQUERY SELECT2 INPUT
+		echo Phalcon\Tag::javascriptInclude('js/plugin/select2/select2.min.js');
+
+		//JQUERY UI + Bootstrap Slider
+		echo Phalcon\Tag::javascriptInclude('js/plugin/bootstrap-slider/bootstrap-slider.min.js');
+
+		//browser msie issue fix
+		echo Phalcon\Tag::javascriptInclude('/smartlast/js/plugin/msie-fix/jquery.mb.browser.min.js');
+
+		//FastClick: For mobile devices
+		echo Phalcon\Tag::javascriptInclude('js/plugin/fastclick/fastclick.min.js');
+        ?>
+		<!--[if IE 8]>
+
+		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+		<![endif]-->
+        <?php
+
+		echo Phalcon\Tag::javascriptInclude('js/demo.min.js');
+
+		//MAIN APP JS FILE
+		echo Phalcon\Tag::javascriptInclude('js/app.min.js');
+
+		//ENHANCEMENT PLUGINS : NOT A REQUIREMENT
+
+		//Flot Chart Plugin: Flot Engine, Flot Resizer, Flot Tooltip
+		echo Phalcon\Tag::javascriptInclude('js/plugin/flot/jquery.flot.cust.min.js');
+		echo Phalcon\Tag::javascriptInclude('js/plugin/flot/jquery.flot.resize.min.js');
+		echo Phalcon\Tag::javascriptInclude('js/plugin/flot/jquery.flot.time.min.js');
+		echo Phalcon\Tag::javascriptInclude('js/plugin/flot/jquery.flot.tooltip.min.js');
+
+		//Full Calendar
+		echo Phalcon\Tag::javascriptInclude('js/plugin/moment/moment.min.js');
+		echo Phalcon\Tag::javascriptInclude('js/plugin/fullcalendar/jquery.fullcalendar.min.js');
+
+		echo Phalcon\Tag::javascriptInclude('js/highlight.pack.js');
+		?>
+		<script>
+			$(document).ready(function(){
+				$("span.method-code").each(function(i, block) {
+					hljs.highlightBlock(block);
+				});
+			});</script>
+
+		<script type="text/javascript">
+
+			$(document).ready(function() {
+
+				/* DO NOT REMOVE : GLOBAL FUNCTIONS!
+				 *
+				 * pageSetUp(); WILL CALL THE FOLLOWING FUNCTIONS
+				 *
+				 * // activate tooltips
+				 * $("[rel=tooltip]").tooltip();
+				 *
+				 * // activate popovers
+				 * $("[rel=popover]").popover();
+				 *
+				 * // activate popovers with hover states
+				 * $("[rel=popover-hover]").popover({ trigger: "hover" });
+				 *
+				 * // activate inline charts
+				 * runAllCharts();
+				 *
+				 * // setup widgets
+				 * setup_widgets_desktop();
+				 *
+				 * // run form elements
+				 * runAllForms();
+				 *
+				 ********************************
+				 *
+				 * pageSetUp() is needed whenever you load a page.
+				 * It initializes and checks for all basic elements of the page
+				 * and makes rendering easier.
+				 *
+				 */
+
+				 pageSetUp();
+
+				/*
+				 * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
+				 * eg alert("my home function");
+				 *
+				 * var pagefunction = function() {
+				 *   ...
+				 * }
+				 * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
+				 *
+				 * TO LOAD A SCRIPT:
+				 * var pagefunction = function (){
+				 *  loadScript(".../plugin.js", run_after_loaded);
+				 * }
+				 *
+				 * OR
+				 *
+				 * loadScript(".../plugin.js", run_after_loaded);
+				 */
+
+			})
+
+		</script>

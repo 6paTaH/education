@@ -1,1 +1,0 @@
-echo 'Boroda1ss';

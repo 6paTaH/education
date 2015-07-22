@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+	   <?php echo $this->tag->getTitle(); ?>
+	   <!--************************************************************* META-->
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="JonKofee" name="author">
+        <!--************************************************************ META END-->
+        <?php
+        // Link to Google CDN's jQuery + jQueryUI; fall back to local
+        echo Phalcon\Tag::javascriptInclude("js/jQuery/jquery-2.1.1.min.js");
+        echo Phalcon\Tag::javascriptInclude("js/jQuery/jquery-ui-1.10.3.min.js");
+
+        //************************************************************* STYLES
+        // #CSS Links
+        // basic styles
+        echo Phalcon\Tag::stylesheetLink('css/bootstrap.min.css');
+        echo Phalcon\Tag::stylesheetLink('css/font-awesome.min.css');
+
+        //Demo purpose only: goes with demo.js
+        echo Phalcon\Tag::stylesheetLink('css/demo.min.css');
+
+        // SmartAdmin Styles : Caution! DO NOT change the order
+        echo Phalcon\Tag::stylesheetLink('css/smartadmin-production-plugins.min.css');
+        echo Phalcon\Tag::stylesheetLink('css/smartadmin-production.min.css');
+        echo Phalcon\Tag::stylesheetLink('css/smartadmin-skins.min.css');
+
+        //SmartAdmin RTL Support
+        echo Phalcon\Tag::stylesheetLink('css/smartadmin-rtl.min.css');
+
+        //Custom
+        echo Phalcon\Tag::stylesheetLink('css/vs.css');
+
+        ?>
+		<!-- FAVICONS -->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	</head>

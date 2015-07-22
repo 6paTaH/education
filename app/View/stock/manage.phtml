@@ -1,0 +1,13 @@
+<?php
+echo Phalcon\Tag::stylesheetLink('111.css');
+?>
+<ul class="auto-advertisement">
+<?php foreach ($cars as $car) {?>
+	<li>
+		<strong class="name"><a title="<?php echo $car->name?>"><?php echo $car->name?></a></strong>
+		<a><img width="100" alt="<?php echo $car->name?>" src="<?php echo $car->img?>"></a>
+		<span class="price"><?php echo $car->price?></span>
+		<span class="place"><?php echo $car->city?></span>
+	</li>
+	<?php }?>
+</ul>

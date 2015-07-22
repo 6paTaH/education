@@ -1,0 +1,57 @@
+	<?php /* #BODY */ ?>
+	<?php
+	/*
+		Possible BODY Classes:
+
+		* 'smart-style-{SKIN#}'
+		* 'smart-rtl'         - Switch theme mode to RTL
+		* 'menu-on-top'       - Switch to top navigation (no DOM change required)
+		* 'no-menu'			  - Hides the menu completely
+		* 'hidden-menu'       - Hides the main menu but still accessable by hovering over left edge
+		* 'fixed-header'      - Fixes the header
+		* 'fixed-navigation'  - Fixes the main menu
+		* 'fixed-ribbon'      - Fixes breadcrumb
+		* 'fixed-page-footer' - Fixes footer
+		* 'container'         - boxed layout mode (non-responsive: will not work with fixed-navigation & fixed-ribbon)
+	 */
+	?>
+	<body class="">
+		<?php /* HEADER */ ?>
+		<header id="header">
+			<div id="logo-group">
+				<?php /* OUR LOGO */ ?>
+				<span id="logo"> <img src="/img/logo200.png" alt="Convextra Administration"> </span>
+				<?php /* END LOGO PLACEHOLDER */ ?>
+			</div>
+
+			<?php $this->partial('partials/header/advanced-dropdown'); ?>
+
+			<?php /* PULLED RIGHT: NAV AREA */ ?>
+			<div class="pull-right">
+
+				<?php /* collapse menu button */ ?>
+				<div id="hide-menu" class="btn-header pull-right">
+					<span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu"><i class="fa fa-reorder"></i></a> </span>
+				</div>
+				<?php /* END COLLAPSE MENU */ ?>
+
+				<?php /* #MOBILE */ ?>
+
+				<?php $this->partial('partials/header/top-menu-profile-link'); ?>
+
+				<?php /* LOGOUT BUTTON */ ?>
+				<div id="logout" class="btn-header transparent pull-right">
+					<span> <a href="/auth/logout" title="Sign Out" data-action="userLogout" data-logout-msg="You can improve your security further after logging out by closing this opened browser"><i class="fa fa-sign-out"></i></a> </span>
+				</div>
+				<?php /* END LOGOUT BUTTON */ ?>
+
+				<?php /* FULLSCREEN BUTTON */ ?>
+				<div id="fullscreen" class="btn-header transparent pull-right">
+					<span> <a href="javascript:void(0);" data-action="launchFullscreen" title="Full Screen"><i class="fa fa-arrows-alt"></i></a> </span>
+				</div>
+				<?php /* END FULLSCREEN BUTTON */ ?>
+			</div>
+			<?php /* end pulled right: nav area */ ?>
+
+		</header>
+		<?php /* END HEADER */ ?>
