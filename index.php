@@ -1,1 +1,1 @@
-echo 'Boroda1s';
+echo 'Boroda1ss';
