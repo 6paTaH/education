@@ -1,21 +1,27 @@
+<style type="text/css">
+#switch:hover {
+	color: #000 !important;
+	opacity: 1 !important;
+}
+</style>
 <form action="" class="lockscreen animated flipInY" method="post">
 	<div class="logo">
 		<img style="width: 150px !important;"  alt="Convextra" src="/img/logo200.png">
 	</div>
 	<div>
-		<img style="width: 120px !important;"  alt="" src="/img/ghost.png">
+		<img style="width: 120px !important;"  alt="" src="<?php echo $user->img?>">
 		<div>
 			<h1>
-			<a></a>
-				Авторизация
+				<a id="switch" href="switch" data-placement="top" rel="tooltip" class="fa fa-user fa-2x text-muted air air-top-right" data-html="true" data-original-title="<i class='glyphicon glyphicon-refresh text-warning'></i> Нажмите сюда для смены пользователя"></a>
+				<?php echo $user->login?>
 				<small>
-					<i class="fa fa-lock"></i>
+					<i class="fa fa-lock text-muted"></i>
 					&nbsp;Locked
 				</small>
 			</h1>
 			<div>
-				<div class="input-group">
-					<input class="input" type="text" placeholder="Login" required="required" value="" id="login" name="login">
+				<div class="input-group hide">
+					<input class="input" type="text" placeholder="Login" required="required" value="<?php echo $user->login?>" id="login" name="login">
 				</div>
 				<div class="input-group">
 					<input class="form-control" type="password" placeholder="Password" required="required" value="" id="password" name="password">

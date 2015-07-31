@@ -30,7 +30,7 @@ class Core_UserCenter_Security extends Phalcon\Mvc\User\Plugin
 			}
 			//Public area resources
 			$publicResources = array(
-				'auth'      => array('login'),
+				'auth'      => array('login', 'switch'),
 			);
 			foreach ($publicResources as $resource => $actions) {
 				$acl->addResource(new Phalcon\Acl\Resource($resource), $actions);
@@ -67,14 +67,14 @@ class Core_UserCenter_Security extends Phalcon\Mvc\User\Plugin
         if ($acl->isAllowed(Core_UserCenter_Enum::GUESTS, $controller, $action)) return TRUE;
 
         // Проверяем, установлена ли в сессии переменная "auth" для определения активной роли.
-        $auth = $this->session->has('auth');
+        $auth = $this->session->has('auth_type');
 
         if (!$auth)
         {
         	return $this->_forwardToLogin();
         }
 
-        $role = $this->session->get('auth')['type'];
+        $role = $this->session->get('auth_type')['type'];
         // Проверяем, имеет ли данная роль доступ к контроллеру (ресурсу)
         $allowed = $acl->isAllowed($role, $controller, $action);
 
@@ -86,13 +86,9 @@ class Core_UserCenter_Security extends Phalcon\Mvc\User\Plugin
 
     private function _forwardToLogin()
     {
-		// Если доступа нет, перенаправляем его на контроллер "index".
-		$this->dispatcher->forward(
-			array(
-				'controller' => 'auth',
-				'action' => 'login'
-			)
-		);
+		// Если доступа нет, перенаправляем его на контроллер "auth".
+		 // HTTP редирект
+        $this->response->redirect('auth/login');
 
 		// Возвращая "false" мы приказываем диспетчеру прекратить текущую операцию
 		return FALSE;
